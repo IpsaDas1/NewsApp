@@ -3,7 +3,9 @@ package com.ipsa.newssapp.data.api
 import com.ipsa.newssapp.data.model.TopHeadlineResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
+import javax.inject.Singleton
 
+@Singleton
 interface NetworkService {
     @GET("top-headlines")
     suspend fun getTopHeadLine(

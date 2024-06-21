@@ -1,5 +1,6 @@
 package com.ipsa.newssapp.data.api
 
+import com.ipsa.newssapp.di.ApiKey
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -7,7 +8,7 @@ import java.io.IOException
 import javax.inject.Inject
 import javax.inject.Singleton
 @Singleton
-class HeaderInterceptor @Inject constructor(private val apiKey: String): Interceptor {
+class HeaderInterceptor @Inject constructor(@ApiKey private val apiKey: String): Interceptor {
     @Throws(IOException::class)
     @Synchronized
     override fun intercept(chain: Interceptor.Chain): Response {

@@ -1,6 +1,5 @@
 package com.ipsa.newssapp.di.module
 
-import com.ipsa.newssapp.BuildConfig
 import com.ipsa.newssapp.data.api.HeaderInterceptor
 import com.ipsa.newssapp.data.api.NetworkService
 import com.ipsa.newssapp.data.util.Const
@@ -20,7 +19,7 @@ import javax.inject.Singleton
 class NetworkModule {
     @ApiKey
     @Provides
-    fun provideApiKey(): String = BuildConfig.API_KEY
+    fun provideApiKey(): String = Const.API_KEY
 
     @BaseUrl
     @Provides
@@ -52,5 +51,4 @@ class NetworkModule {
     fun provideHeaderInterceptor(@ApiKey apiKey: String): HeaderInterceptor {
         return HeaderInterceptor(apiKey)
     }
-
 }
